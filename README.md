@@ -34,3 +34,17 @@ Resposta:
 | Fent servir la configuració per defecte del mòdul logging                       | - Fàcil d'implementar, sense gaire configuració prèvia necessària.                                     | - Configuració molt limitada, no pots personalitzar ni escalar.                                       |
 | Instanciant un objecte logger i parametritzant-lo des del programa              | - Permet control i flexibilitat en configuració (diferents handlers, formatadors).                     | - Requereix més codi i complexitat en programes grans.                                                |
 | Instanciant un objecte logger a partir d’una configuració emmagatzemada a fitxer| - Permet gestionar configuracions complexes i reutilitzar-les fàcilment (ideal per equips grans).      | - Requereix mantenir el fitxer de configuració actualitzat i una càrrega inicial de configuració.     |
+
+
+Llibreries de logs en altres llenguatges
+
+| Característica                             | Python (logging)                                                                                 | Java (Log4j)                                                                   |
+|--------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| Nom de la llibreria                        | logging                                                                                          | Log4j                                                                          |
+| És nativa del llenguatge?                  | Sí, inclosa a la llibreria estàndard.                                                            | No, s'ha d'importar com una dependència externa.                               |
+| URL per descarregar-se la llibreria        | [https://docs.python.org/3/library/logging.html](https://docs.python.org/3/library/logging.html) | [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/) |
+| Inicialització de l’objecte de logger      | `logger = logging.getLogger('nom_logger')`                                                       | Declaració en el codi o configuració al fitxer `log4j2.xml`                    |
+| Nivells de log disponibles                 | DEBUG, INFO, WARNING, ERROR, CRITICAL                                                            | TRACE, DEBUG, INFO, WARN, ERROR, FATAL                                         |
+| Mètode per fer log                         | `logger.info("Missatge")`, `logger.error("Error!")`                                              | `logger.info("Missatge");`, `logger.error("Error!");`                          |
+| Tipus de manegadors (pantalla, fitxer...)  | `StreamHandler`, `FileHandler`, `SMTPHandler`, `RotatingFileHandler`                             | `ConsoleAppender`, `FileAppender`, `RollingFileAppender`, `SocketAppender`     |
+| Opcions de format                          | Utilitza `Formatter`: `%(asctime)s - %(levelname)s - %(message)s`                                | Es defineixen a `PatternLayout` (per ex., `%d{ISO8601} %p - %m%n`)             |
