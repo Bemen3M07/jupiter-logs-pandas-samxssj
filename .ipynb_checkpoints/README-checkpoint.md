@@ -13,9 +13,8 @@ Cercar una paraula concreta dintre d’un arxiu de log:
 Aquesta comanda busca i mostra totes les línies del fitxer que contenen la paraula especificada.
 
 Si vols cercar sense distingir majúscules de minúscules:
-grep -i "paraula" <nom_arxiu.log>
+    grep -i "paraula" <nom_arxiu.log>
 
 Si vols comptar les línies on apareix la paraula:
-grep -c "paraula" <nom_arxiu.log>
-
+    grep -c "paraula" <nom_arxiu.log>
 
