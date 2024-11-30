@@ -18,3 +18,19 @@ Si vols cercar sense distingir majúscules de minúscules:
 Si vols comptar les línies on apareix la paraula:
     grep -c "paraula" <nom_arxiu.log>
 
+Exercici 2
+Pregunta:
+Què creieu que és millor, mostrar els logs a la terminal durant l'execució del programa o bolcar-los en un fitxer de text?
+
+Resposta:
+· Mostrar logs a la terminal és útil per depuració en temps real, especialment durant el desenvolupament.
+· Bolcar-los en un fitxer és millor per auditoria, monitoratge, o depuració posterior.
+· En entorns de producció, sovint s'utilitza una combinació de tots dos.
+
+ Avantatges i desavantatges de diferents maneres de fer logs
+
+| Exemple                                                                         | Avantatges                                                                                             | Desavantatges                                                                                         |
+|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| Fent servir la configuració per defecte del mòdul logging                       | - Fàcil d'implementar, sense gaire configuració prèvia necessària.                                     | - Configuració molt limitada, no pots personalitzar ni escalar.                                       |
+| Instanciant un objecte logger i parametritzant-lo des del programa              | - Permet control i flexibilitat en configuració (diferents handlers, formatadors).                     | - Requereix més codi i complexitat en programes grans.                                                |
+| Instanciant un objecte logger a partir d’una configuració emmagatzemada a fitxer| - Permet gestionar configuracions complexes i reutilitzar-les fàcilment (ideal per equips grans).      | - Requereix mantenir el fitxer de configuració actualitzat i una càrrega inicial de configuració.     |
