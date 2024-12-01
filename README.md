@@ -68,7 +68,7 @@ Eines proposades
    - Ús: 
      És útil per combinar codi, explicacions i gràfiques en un mateix document.
    - Prova:
-     Codi que genera un gràfic simple dins un Notebook. (Inclou aquí una captura del gràfic generat dins Jupyter Notebook).
+     Codi que genera un gràfic simple dins un Notebook. (Codi i fitxers CSV en el directori comú).
 
 3. ReportLab
    - Funcionalitat:
@@ -76,7 +76,7 @@ Eines proposades
    - Ús:
      S’utilitza per generar un informe PDF amb dades i gràfiques generades a partir de les altres eines.
    - Prova:
-     Exemple de codi per generar un PDF amb text i gràfiques. (Inclou aquí una captura del PDF generat).
+     Exemple de codi per generar un PDF amb text i gràfiques. (Codi i fitxers CSV en el directori comú).
 
 ---
 
@@ -94,3 +94,24 @@ Argumentació:
 
 ---
 
+Exercici 4 al notebook complet i explicat
+
+Exercici 5: 
+Anàlisi de dades dels alumnes
+Resultats obtinguts:
+1. Mitjana de nota final per alumne: Es mostre a la taula al Notebook.
+2. Mitjana general de tots els alumnes: 7.01
+3. Percentatge d'aprovats i suspesos: 
+   - Aprovats: 100%
+   - Suspesos: 0%
+4. Nota més alta i més baixa:
+   - Nota més alta: 8.50 (Alumne: Lopez)
+   - Nota més baixa: 5.50 (Alumne: Ruiz)
+5. Alumnes amb totes les notes ≥ 7: Es mostre a la taula al Notebook.
+
+Exercici 6: Gràfics de dades visuals
+
+Gràfic 1: Mitjana de notes per alumne
+Gràfic 2: Percentatge d'aprovats i suspesos
+Gràfic 3: Mitjana de les notes per assignatura
+Gràfic 4: Relació entre les notes M01 i M04
