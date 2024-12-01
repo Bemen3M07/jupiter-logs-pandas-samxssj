@@ -50,64 +50,47 @@ Llibreries de logs en altres llenguatges
 | Opcions de format                          | Utilitza `Formatter`: `%(asctime)s - %(levelname)s - %(message)s`                                | Es defineixen a `PatternLayout` (per ex., `%d{ISO8601} %p - %m%n`)             |
 
 
-Explicació Exercici 3: Gestió i anàlisi de logs amb llibreries de Python
+Exercici 3: Aplicació amb introducció de dades i generació de gràfiques
 
-1. Instal·lació de llibreries
+Eines proposades
 
-Per realitzar l'exercici, hem utilitzat les següents llibreries de Python:
+1. Pandas
+   - Funcionalitat: 
+     Pandas és una llibreria de Python per a la manipulació i anàlisi de dades estructurades. Permet treballar amb dades tabulars (en format de taula, com els fitxers CSV o Excel) de manera senzilla, amb operacions com filtres, agrupacions, unió de taules, i càlculs estadístics.
+   - Ús: 
+     És ideal per carregar, netejar i preparar dades per a la seva visualització o anàlisi.
+   - Prova:
+     Fitxer CSV carregat i analitzat amb Pandas. (Codi i fitxers CSV en el directori comú).
 
-    - loguru: Per crear logs de manera senzilla.
-    - pandas: Per analitzar i manipular les dades dels logs.
+2. Jupyter Notebook
+   - Funcionalitat:
+     Jupyter Notebook és una eina interactiva que permet crear i compartir documents amb codi en Python, visualitzacions i text explicatiu en format Markdown. És ideal per al desenvolupament iteratiu i per presentar els resultats de forma clara.
+   - Ús: 
+     És útil per combinar codi, explicacions i gràfiques en un mateix document.
+   - Prova:
+     Codi que genera un gràfic simple dins un Notebook. (Inclou aquí una captura del gràfic generat dins Jupyter Notebook).
 
-Instal·les les llibreries necessàries amb pip:
-pip install pandas loguru
+3. ReportLab
+   - Funcionalitat:
+     ReportLab és una llibreria de Python per generar documents PDF. Permet afegir text, gràfics i imatges de forma programada, útil per crear informes automàtics.
+   - Ús:
+     S’utilitza per generar un informe PDF amb dades i gràfiques generades a partir de les altres eines.
+   - Prova:
+     Exemple de codi per generar un PDF amb text i gràfiques. (Inclou aquí una captura del PDF generat).
 
-2. Creació de logs amb loguru
-Hem utilitzat la llibreria loguru per crear logs. Aquest codi genera logs d'informació i d'error en dos fitxers separats:
+---
 
-    from loguru import logger
-    # Configurar el logger per escriure en un fitxer
-    logger.add("logs/info_loguru.log", level="INFO")
-    logger.add("logs/error_loguru.log", level="ERROR")
-    # Logs de prova
-    logger.info("Aquest és un missatge d'informació.")
-    logger.error("Aquest és un missatge d'error.")
+Decisió final sobre eines i llibreries
 
-3. Anàlisi de logs amb pandas
-Un cop hem generat els logs, podem analitzar-los utilitzant pandas. A continuació, llegim els logs en format CSV i mostrem les primeres línies del fitxer:
+Per a l'aplicació que es vol desenvolupar, s'han triat les següents eines:
+- Pandas: Per carregar i manipular les dades des de fitxers JSON, TXT o CSV.
+- Jupyter Notebook: Per desenvolupar i provar el codi de manera interactiva, i per presentar les gràfiques.
+- ReportLab: Per generar informes finals en PDF amb les gràfiques i resultats obtinguts.
 
-    import pandas as pd
-    # Llegir el fitxer de logs CSV (els logs es poden convertir a CSV per a l'anàlisi)
-    logs_df = pd.read_csv('logs/info_loguru.log', names=["timestamp", "level", "message"])
-    # Mostrar les primeres línies del dataframe
-    print(logs_df.head())
+Argumentació:
+- Pandas és imprescindible per gestionar les dades d'una manera eficient i flexible.
+- Jupyter Notebook proporciona una manera intuïtiva de combinar desenvolupament i documentació.
+- ReportLab permet crear un informe professional amb els resultats finals, cosa que és molt útil per presentar la informació als treballadors.
 
-4. Filtrar logs d'error
-També podem filtrar els logs per nivell (per exemple, només mostrar els logs d'error):
-
-    # Filtrar per logs d'error
-    error_logs = logs_df[logs_df['level'] == 'ERROR']
-    print(error_logs)
-
-
-5. Taula comparativa de llibreries de logs
-
-| Característica             | Python (logging)                                             | Java (Log4j)                                           |
-|----------------------------------|------------------------------------------------------------------|-----------------------------------------------------------|
-| **Nom de la llibreria**          | logging                                                         | Log4j                                                     |
-| **És nativa del llenguatge?**             | Sí, inclosa a la llibreria estàndard.                           | No, s'ha d'importar com una dependència externa.          |
-| **URL per descarregar-se la llibreria**   | [https://docs.python.org/3/library/logging.html](https://docs.python.org/3/library/logging.html) | [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/) |
-| **Inicialització de l’objecte de logger** | `logger = logging.getLogger('nom_logger')`                     | Declaració en el codi o configuració al fitxer `log4j2.xml` |
-| **Nivells de log disponibles**                | DEBUG, INFO, WARNING, ERROR, CRITICAL                           | TRACE, DEBUG, INFO, WARN, ERROR, FATAL                   |
-| **Mètode per fer log**          | `logger.info("Missatge")`, `logger.error("Error!")`             | `logger.info("Missatge");`, `logger.error("Error!");`     |
-| **Tipus de manegadors (pantalla, fitxer...)** | `StreamHandler`, `FileHandler`, `SMTPHandler`, `RotatingFileHandler` | `ConsoleAppender`, `FileAppender`, `RollingFileAppender`, `SocketAppender` |
-| **Opcions de format**           | Utilitza `Formatter`: `%(asctime)s - %(levelname)s - %(message)s` | Es defineixen a `PatternLayout` (per ex., `%d{ISO8601} %p - %m%n`) |
-
-
-6. Pregunta sobre la visualització dels logs
-Pregunta:
-Què creieu que és millor, mostrar els logs per exemple a la terminal durant l'execució del programa o bolcar-los en un fitxer de text?
-
-Resposta:
-Depèn del cas d'ús. Si es necessita un seguiment en temps real o una depuració ràpida, és millor mostrar-los per la terminal. Si es vol tenir un registre persistent i més detallat, el millor és bolcar els logs en un fitxer de text, ja que així es pot revisar més tard i tenir un historial complet.
+---
 
