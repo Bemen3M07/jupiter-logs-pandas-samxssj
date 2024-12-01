@@ -115,3 +115,28 @@ Gràfic 1: Mitjana de notes per alumne
 Gràfic 2: Percentatge d'aprovats i suspesos
 Gràfic 3: Mitjana de les notes per assignatura
 Gràfic 4: Relació entre les notes M01 i M04
+
+Exercici 7: Informe de la pràctica
+
+1. Informe de la part de Logging
+
+S'ha utilitzat la llibreria "logging" per registrar missatges d'informació i d'errors a fitxers separats (`info.log` i `error.log`). Això ens permet mantenir un registre de l'execució de l'aplicació per a futures revisions.
+
+2. Informe de la part del Tractament de Dades
+
+Amb pandas, hem calculat les mitjanes de les notes dels alumnes i hem generat gràfiques amb matplotlib per visualitzar els resultats de manera eficient.
+
+Resultats:
+1. Mitjana de notes per alumne.
+2. Percentatge d'aprovats i suspesos.
+3. Relació entre les notes de les assignatures.
+
+Gràfiques generades:
+
+1. Gràfic de barres: Mitjana de notes per alumne.
+
+2. Gràfic circular: Percentatge d'aprovats i suspesos.
+
+3. Gràfic de línies: Mitjana de les notes per assignatura.
+
+4. Gràfic de dispersió: Relació entre les notes de M01 i M04.
