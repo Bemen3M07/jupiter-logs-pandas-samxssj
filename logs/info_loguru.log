@@ -1,0 +1,8 @@
+2024-11-30 18:34:04.612 | INFO     | __main__:<module>:7 - Aquest és un missatge d'informació.
+2024-11-30 18:34:04.613 | ERROR    | __main__:<module>:8 - Aquest és un missatge d'error.
+2024-11-30 18:36:12.750 | INFO     | __main__:<module>:9 - Informació important.
+2024-11-30 18:36:12.750 | INFO     | __main__:<module>:9 - Informació important.
+2024-11-30 18:36:12.751 | ERROR    | __main__:<module>:10 - Un error ha ocorregut.
+2024-11-30 18:36:12.751 | ERROR    | __main__:<module>:10 - Un error ha ocorregut.
+2024-11-30 18:36:12.752 | WARNING  | __main__:<module>:11 - Això és un avís.
+2024-11-30 18:36:12.752 | WARNING  | __main__:<module>:11 - Això és un avís.
